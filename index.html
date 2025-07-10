@@ -74,17 +74,21 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      
     }
 
     .logo-container img {
       height: 45px;
       width: auto;
+      border:#2c3e50 solid;
+      border-radius: 50%;
     }
 
     .logo-text {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary-blue);
+
     }
 
     .nav-links {
@@ -123,9 +127,9 @@
 
     /* HERO SECTION */
     .hero {
- background: url('bg-salon.jpg') no-repeat center ;
+ background: url('salon-bg.jpg') no-repeat center;
   background-size: cover;
-  color: blue;
+  color: black;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -138,6 +142,7 @@
       margin-top: 70px;
       position: relative;
       overflow: hidden;
+      
     }
 
     .hero::before {
@@ -154,9 +159,35 @@
   
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-    }
+   background: rgba(105, 105, 105, 0.6);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: crimson;                 
+  border-radius: 10px;
+        border: blue solid;
+}
+ .blue {
+  color: white; 
+      font-size: 60px;
+
+}
+
+.red {
+  color: white;
+    font-size: 60px;
+}
+   .blues {
+  color: white; 
+  font-size: 40px;
+}
+
+.reds {
+   color: white;
+  font-size: 40px;
+}
 
     .hero h1 {
       font-size: 3.5rem;
@@ -191,6 +222,7 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     }
+
 
     @keyframes fadeInUp {
       from {
@@ -502,6 +534,8 @@
     .card:nth-child(4) { animation-delay: 0.4s; }
     .card:nth-child(5) { animation-delay: 0.5s; }
     .card:nth-child(6) { animation-delay: 0.6s; }
+
+   
   </style>
 </head>
 <body>
@@ -524,8 +558,10 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Pamper Yourself From Head‑to‑Toe</h1>
-      <p>Headstart Barbershop, Salon & Spa -- "We do our best!"</p>
+<h1>
+  <span class="blue">Pamper Yourself</span><span class="red"> From Head‑to‑Toe</span>
+</h1>
+      <h3><span class="reds">Headstart Barbershop, Salon</span><span class="blues"> & Spa "We do our best!"</span></h3><br>
       <a href="#services" class="hero-cta">Explore Our Services</a>
     </div>
   </section>
