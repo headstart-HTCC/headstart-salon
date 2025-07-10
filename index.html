@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headstart Salon, Body & Nail Spa</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/616278a481.js" crossorigin="anonymous"></script>
+<link rel="icon" href="data:,">
+
   <style>
     :root {
       --primary-blue: #0000CD;
@@ -60,21 +63,20 @@
       transition: all 0.3s ease;
     }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
+   .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 70px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      
+      background: #fff;
+      padding: 4px 6px;
+      border-radius: 6px;
+      height: auto;
     }
 
     .logo-container img {
@@ -91,12 +93,13 @@
 
     }
 
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
+  .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
 
     .nav-links a {
       text-decoration: none;
@@ -458,25 +461,28 @@
         display: block;
       }
 
+    @media (max-width: 768px) {
+   .menu-toggle {
+        display: block;
+      }
       .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: var(--shadow-medium);
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: all 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(224, 255, 255, 0.95); /* semi-transparent primary blue */
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 1.5rem 0;
+    gap: 1.2rem;
+    backdrop-filter: blur(8px); /* optional for a frosted effect */
+    transition: all 0.3s ease-in-out;
       }
-
       .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
+        display: flex;
       }
-
+    }
       .hero h1 {
         font-size: 2.5rem;
       }
@@ -522,6 +528,29 @@
         padding: 1.5rem;
       }
     }
+      @media (max-width: 768px) {
+      .blue, .red {
+        font-size: 36px;
+      }
+
+      .blues, .reds {
+        font-size: 24px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .blue, .red {
+        font-size: 28px;
+      }
+
+      .blues, .reds {
+        font-size: 20px;
+      }
+    }
 
     /* ANIMATION FOR CARDS */
     .card {
@@ -540,11 +569,10 @@
 </head>
 <body>
   <!-- NAVIGATION -->
-  <nav>
+<nav>
     <div class="nav-container">
       <div class="logo-container">
-        <img src="salon.png" alt="Headstart Logo" />
-        <span class="logo-text">Headstart</span>
+        <img id="logo" src="salon.png" alt="Headstart Logo" />
       </div>
       <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
       <ul class="nav-links">
@@ -555,13 +583,14 @@
     </div>
   </nav>
 
+
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
 <h1>
   <span class="blue">Pamper Yourself</span><span class="red"> From Head‑to‑Toe</span>
 </h1>
-      <h3><span class="reds">Headstart Barbershop, Salon</span><span class="blues"> & Spa "We do our best!"</span></h3><br>
+      <h3><span class="reds">Headstart Barbershop, Salon</span><span class="blues">, Kiddie Salon , Massage and Nail Spa.<br>"We do our best!"</span></h3><br>
       <a href="#services" class="hero-cta">Explore Our Services</a>
     </div>
   </section>
@@ -787,23 +816,13 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     // Mobile menu toggle
-    const toggle = document.querySelector('.menu-toggle');
+  const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
