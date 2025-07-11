@@ -699,7 +699,7 @@
         <h3>Warts Removal</h3>
         <ul>
           <li><span>Warts</span><span>₱ 35/Pc</span></li>
-          <li><span>Face Package</span><span>₱ 2,500 w/retouch</span></li>
+          <li><span>Face Package</span><span>₱ 2,500</span></li>
           <li><span>Lip</span><span>₱ 4,500</span></li>
         </ul>
       </div>
@@ -871,19 +871,6 @@
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
     });
-     // Close menu when a link is clicked
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
-      navLinks.classList.remove('active');
-    }
-  });
   </script>
 </body>
 </html>
